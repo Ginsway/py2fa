@@ -2,6 +2,7 @@ import json
 import time
 import pyotp
 import pyperclip
+import sys
 
 if __name__ == "__main__":
     
@@ -14,11 +15,11 @@ if __name__ == "__main__":
         with open("token.json","w") as f:
             json.dump([token],f)
             
-    totp = pyotp.TOTP(pyotp.random_base32())
+    totp = pyotp.TOTP(token)
     while(True):
         try:
             time.sleep(1)
             print(totp.now())
             pyperclip.copy(totp.now())
         except KeyboardInterrupt:
-            exit(0)
+            sys.exit(0)

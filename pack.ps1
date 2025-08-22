@@ -1,0 +1,1 @@
+D:/Project/py2fa/.venv/Scripts/python.exe -m PyInstaller d:/Project/py2fa/main.py
